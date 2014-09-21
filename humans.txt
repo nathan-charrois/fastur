@@ -1,0 +1,13 @@
+# Main
+
+    Author: nathancharrois@gmail.com
+    Role: developer / designer
+    Site: http://cetan.ca
+
+# Thanks
+
+    Skeleton MVC Pattern by panique
+    https://github.com/panique/php-mvc/
+
+    Donny Dog
+    Steam ID: Donny Dog

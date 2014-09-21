@@ -1,0 +1,118 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, thead, tr, th, td,
+article, aside canvas, details, footer, header, hgroup,
+menu, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    height: 100%;
+}
+ol, ul {
+    list-style: none;
+}
+
+/* Placeholders */
+::-webkit-input-placeholder{ /* WebKit browsers */
+    color:    #cecece;
+}
+:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color:    #cecece;
+    opacity:  1;
+}
+::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color:    #cecece;
+    opacity:  1;
+}
+:-ms-input-placeholder{ /* Internet Explorer 10+ */
+    color:    #cecece;
+}
+
+/* Box Model */
+*,
+*:before,
+*:after{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Baseline for responsive images */
+img{
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Baseline for responsive forms */
+textarea{
+  height: auto;
+  min-height: 50px;
+}
+select{
+  width: 100%;
+}
+form{
+  display: block;
+  position: relative;
+}
+
+/* Basic Utilities */
+.left   { float: left !important; }
+.right  { float: right !important; }
+.hide   { display: none; }
+.center { text-align: center; }
+.debug  { background-color: #eadbd0;}
+
+/* Margin Utilities */
+.mtl{ margin-top: 20px; }
+.mtm{ margin-top: 12px; }
+.mts{ margin-top: 5px; }
+
+.mbl{ margin-bottom: 20px; }
+.mbm{ margin-bottom: 12px; }
+.mbs{ margin-bottom: 5px; }
+
+.mrl{ margin-right: 20px; }
+.mrm{ margin-right: 12px; }
+.mrs{ margin-right: 5px; }
+
+.mll{ margin-left: 20px; }
+.mlm{ margin-left: 12px; }
+.mls{ margin-left: 5px; }
+
+/* Foundation Clearfix Class */
+.clearfix{ *zoom: 1; }
+  .clearfix:before,
+  .clearfix:after{
+    content: " ";
+    display: table;
+  }
+  .clearfix:after{
+    clear: both;
+  }
+
