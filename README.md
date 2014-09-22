@@ -1,4 +1,4 @@
 fastur
 ==============
 
-Weekend Project: Fast imgur uploading.
+faster imgur uploading

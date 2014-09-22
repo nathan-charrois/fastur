@@ -1,6 +1,6 @@
 <?php
 namespace Fastur\Lib;
-use Fastur\Controller\Upload;
+use Fastur\Controller\Home;
 
 class Application {
 
@@ -56,7 +56,7 @@ class Application {
                 }
             } else {
 
-                $index = new Upload();
+                $index = new Home();
                 $index->index();
             }
         }
