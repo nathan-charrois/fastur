@@ -6,16 +6,25 @@ use Fastur\Helper\Imgur;
 use Fastur\Helper\Input;
 
 /**
- *  Home Controller
+ *  Site Controller
  *
  *  @author nathan <nathancharrois@gmail.com>
  */
-    class Home extends Controller {
+    class Site extends Controller {
 
         /**
          *  Index page.
          */
             public function index() {
+
+                // Render layout and view files.
+                $this->render('static/index', 'site/index');
+            }
+
+        /**
+         *  Upload.
+         */
+            public function upload() {
 
                 // If file has been posted.
                 if(Input::exists('file')) {
@@ -24,13 +33,11 @@ use Fastur\Helper\Input;
                     $imgur = new Imgur(API_KEY, API_SECRET);
 
                     // Upload file.
-                    $image = $imgur->upload()->file('/test/path', $_FILES['image']);
+                    $image = $imgur->upload()->file($_FILES['files']);
 
                     var_dump($image);
+
+                    return true;
                 }
-
-
-                // Render layout and view files.
-                $this->render('static/index', 'upload/index');
             }
     }

@@ -1,1 +1,2 @@
 - Add google analytics
+- Multi drag and drop

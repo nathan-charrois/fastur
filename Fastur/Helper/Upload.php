@@ -34,10 +34,9 @@ namespace Fastur\Helper;
         /**
          *  Upload file.
          *
-         *  @param  string $file_path   fastur's path to image.
          *  @param  array  $image_data  the image and its meta data.
          */
-            public function file($file_path, $image_data = array()) {
+            public function file($image_data = array()) {
 
                 $filename = $image_data['tmp_name'];
 

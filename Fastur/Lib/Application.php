@@ -1,6 +1,6 @@
 <?php
 namespace Fastur\Lib;
-use Fastur\Controller\Home;
+use Fastur\Controller\Site;
 
 class Application {
 
@@ -56,7 +56,7 @@ class Application {
                 }
             } else {
 
-                $index = new Home();
+                $index = new Site();
                 $index->index();
             }
         }
