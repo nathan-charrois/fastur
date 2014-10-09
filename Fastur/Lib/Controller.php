@@ -6,6 +6,7 @@ namespace Fastur\Lib;
         /**
          *  Load the model with the given name.
          *
+         *  @author panique@web.de
          *  @param   string $model_name      The name of the model
          *  @param   string $param           Pass the model information.
          *  @return  object model
@@ -22,6 +23,7 @@ namespace Fastur\Lib;
         /**
          *  Render layout and view files.
          *
+         *  @author panique@web.de
          *  @param $layout the layout to render.
          *  @param $view the view to render.
          *  @param $data_array data to be passed to view() and layout().
@@ -43,6 +45,7 @@ namespace Fastur\Lib;
         /**
          *  Prepare view files.
          *
+         *  @author nathancharrois@gmail.com
          *  @param $view the view to render.
          *  @param $data_array data to be passed to the view.
          */
@@ -67,6 +70,7 @@ namespace Fastur\Lib;
         /**
          *  Render Layout.
          *
+         *  @author nathancharrois@gmail.com
          *  @param $layout the layout to render.
          *  @param $data_array data to be passed to the layout.
          */
@@ -87,29 +91,4 @@ namespace Fastur\Lib;
 
                 return $html;
             }
-
-            /**
-             *  Render Element.
-             *
-             *  @param  string   $name  the name of the element file.
-             *  @param  array    $data  element options and/or data.
-             */
-                public function element($name, $data = array()) {
-
-                    extract($data);
-
-                    // Start buffer.
-                    ob_start();
-
-                    // Build full path to element.
-                    $path = ELEMENT_PATH . $name . ELEMENT_FILE_EXT;
-
-                    include $path;
-
-                    // Render the element file.
-                    $html = ob_get_clean();
-
-                    return $html;
-                }
-
     }

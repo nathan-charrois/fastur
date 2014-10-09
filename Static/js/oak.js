@@ -48,6 +48,9 @@
 
             // Set image link
             $('[data-update="file-link"]').html(file.data.link);
+
+            // Set text so user can copy.
+            setupCopy(file.data.link);
         }
 
         // Upload via ajax.
@@ -82,6 +85,16 @@
                     render(imgurResponse);
                 }
             });
+        }
+
+
+        // Set Copy
+        var setupCopy = function(url) {
+
+            $('.image-view').attr("data-clipboard-text", url)
+
+            // Setup ZeroClipboard
+            var client = new ZeroClipboard($('.image-view'));
         }
 
 

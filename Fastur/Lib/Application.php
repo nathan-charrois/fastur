@@ -64,7 +64,7 @@ class Application {
     /**
      *  Get and split the URL
      *
-     *  @author panique@web.de
+     *  @author panique@web.de, nathancharrois@gmail.com
      */
         private function splitUrl() {
 

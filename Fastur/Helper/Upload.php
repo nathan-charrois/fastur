@@ -4,7 +4,7 @@ namespace Fastur\Helper;
 /**
  *  Prepare upload for imgur api.
  *
- *  @author nathan <nathancharrois@gmail.com>
+ *  @author nathancharrois@gmail.com
  */
 
     class Upload {
@@ -47,7 +47,7 @@ namespace Fastur\Helper;
                 $data = fread($handle, filesize($filename));
 
                 // Assign image data into array.
-                $image_data   = array('image' => base64_encode($data));
+                $image_data = array('image' => base64_encode($data));
 
                 // Access correct API method.
                 $url = $this->endpoint . "/upload";

@@ -8,7 +8,7 @@ use Fastur\Helper\Input;
 /**
  *  Site Controller
  *
- *  @author nathan <nathancharrois@gmail.com>
+ *  @author nathancharrois@gmail.com
  */
     class Site extends Controller {
 

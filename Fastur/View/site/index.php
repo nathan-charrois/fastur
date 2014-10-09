@@ -37,8 +37,8 @@
         </div>
     </div>
 
-    <div class="container hide" data-mode="view" data-event="get-url">
-        <div class="image-view">
+    <div class="container hide" data-mode="view">
+        <div class="image-view" data-clipboard-text="">
             <div class="image-info">
                 <h1 data-update="file-link"></h1>
                 <span data-update="file-size"></span>

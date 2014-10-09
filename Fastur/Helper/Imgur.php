@@ -4,7 +4,7 @@ namespace Fastur\Helper;
 /**
  *  Imgur
  *
- *  @author nathan <nathancharrois@gmail.com>
+ *  @author nathancharrois@gmail.com
  */
     class Imgur {
 
@@ -14,7 +14,6 @@ namespace Fastur\Helper;
             protected $api_key = "";
             protected $api_secret = "";
             protected $api_endpoint = "https://api.imgur.com/3";
-            protected $oauth_endpoint = "https://api.imgur.com/oauth2";
 
         /**
          *   @return imgur connection class.

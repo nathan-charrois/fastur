@@ -4,7 +4,7 @@ namespace Fastur\Helper;
 /**
  *  Connect to imgur api.
  *
- *  @author nathan <nathancharrois@gmail.com>
+ *  @author nathancharrois@gmail.com
  */
 
     class Connect {
@@ -20,15 +20,6 @@ namespace Fastur\Helper;
             protected $api_key;
             protected $api_secret;
             protected $api_endpoint;
-            protected $access_token;
-            protected $refresh_token;
-
-        /**
-         *  Connect to imgur oauth api.
-         *
-         *  @var string
-         */
-            protected $oauth = "https://api.imgur.com/oauth2";
 
         /**
          *  Set api key and secret on Construct.

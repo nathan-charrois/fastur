@@ -4,7 +4,7 @@ namespace Fastur\Helper;
 /**
  *  Input Class
  *
- *  @author nathan <nathancharrois@gmail.com>
+ *  @author nathancharrois@gmail.com
  */
 
     class Input{

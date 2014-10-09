@@ -6,6 +6,12 @@
 
 # Thanks
 
+    Imgur API V3
+    http://api.imgur.com/
+
+    Imgur API Client
+    https://github.com/Adyg/php-imgur-api-client
+
     Skeleton MVC Pattern by panique
     https://github.com/panique/php-mvc/
 
