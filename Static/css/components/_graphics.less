@@ -1,0 +1,43 @@
+/*  Graphics
+    ===
+
+    Cloud
+    ---
+
+    <div class="graphic-cloud">
+        <i class="fa fa-cloud"></i>
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+*/
+    .graphic-cloud{
+        position: relative;
+        height: 180px;
+        width: 236px;
+        margin: 0 auto;
+
+        .fa-cloud{
+            position: absolute;
+            z-index: 0;
+            font-size: 220px;
+            top: 0;
+            left: 0;
+        }
+
+        .fa-refresh,
+        .fa-check{
+            position: absolute;
+            z-index: 1;
+            font-size: 50px;
+            top: 95px;
+            left: 50%;
+            margin-left: -25px;
+        }
+
+        .fa-refresh{
+            color: #2c79b5;
+        }
+
+        .fa-check{
+            color: #169b42;
+        }
+    }

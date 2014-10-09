@@ -1,5 +1,0 @@
-<?php
-
-    // Upload Element.
-
-?>

@@ -3,7 +3,7 @@
 define('URL', 'http://' . $_SERVER['SERVER_NAME'] . '/2014/fastur/');
 
 define('APP_NAME', 'Fastur');
-define('APP_VER' , '0.1');
+define('APP_VER' , '0.2');
 
 define('API_KEY', '3af4d9f839193e6');
 define('API_SECRET' , 'a97e5ab890b943f536099f6a9bb3307e25e4d5cc');

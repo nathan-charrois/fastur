@@ -1,2 +1,2 @@
 - Add google analytics
-- Multi drag and drop
+- Prevent multiple uploads

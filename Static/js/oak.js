@@ -1,51 +1,131 @@
 /* oak.js
  * nathancharrois@gmail.com
+ *
+ * todo: rewrite with module pattern.
  */
 
     $(function(){
 
-        var dropzone = $('[data-event="dropzone"]'),
-            interface = $('.interface-container');
+        var dropzone = $('[data-event="dropzone"]');
 
-        var upload = function(files) {
+        // Set interface.
+        var setMode = function(name) {
+            switch(name) {
+                case 'select':
+                    $('[data-mode="view"]').hide();
+                    $('[data-mode="select"]').show();
+                break;
+
+                case 'upload':
+                    $('[data-mode="select"]').hide();
+                    $('[data-mode="upload"]').show();
+                break;
+
+                case 'view':
+                case 'upload':
+                    $('[data-mode="upload"]').hide();
+                    $('[data-mode="view"]').show();
+                break;
+            }
+        }
+
+        // Render file.
+        var render = function(file) {
+
+            var file = JSON.parse(file);
+
+            // Update URL.
+            window.history.pushState('', '', '/2014/fastur/view/' + file.data.id);
+
+            // Create and set image.
+            var img = document.createElement('img');
+            img.src = file.data.link;
+            $('.image-view').append(img);
+
+            // Set image size.
+            var size = file.data.size / 1024;
+            $('[data-update="file-size"]').html(size.toFixed(2) + ' KB');
+
+            // Set image link
+            $('[data-update="file-link"]').html(file.data.link);
+        }
+
+        // Upload via ajax.
+        // todo: allow for multi file upload.
+        var upload = function(file) {
 
             var formData = new FormData();
             var xhr = new XMLHttpRequest();
             var i;
 
-            // Loop through files array.
-            for(i = 0; i < files.length; i = i + 1) {
-
-                // Append file data to object.
-                formData.append('files', files[i]);
-            }
+            // Append file data to object.
+            formData.append('files', file[0]);
 
             // Post with ajax.
             $.ajax({
                 type: 'POST',
-                url: 'upload',
+                url: '/2014/fastur/site/upload',
                 processData: false,
                 contentType: false,
                 data: formData,
-                success: function() {
-                    console.log('Success');
+                beforeSend: function() {
+
+                    // Change to upload interface.
+                    setMode('upload');
+                },
+                success: function(imgurResponse) {
+
+                    // Change to view interface.
+                    setMode('view');
+
+                    // Render the view.
+                    render(imgurResponse);
                 }
             });
         }
 
+
+        // Send files to upload.
+        dropzone.on("drop", function(event){
+            event.preventDefault();
+            dropzone.removeClass('active');
+
+            var file = event.originalEvent.dataTransfer.files;
+            upload(file);
+        });
+
+        $('input').change(function(event){
+            var file = $('input')[0].files;
+            upload(file);
+        });
+
+
+        // Browse for file.
+        $('[data-event="select-file"]').click(function(){
+            $('input').click();
+        });
+
+
+        // Get image URL.
+        $('[data-event="get-url"]').click(function(){
+            var test = $('.image-view').find('img').attr('src');
+
+            console.log(test);
+        });
+
+
+        // Add / Remove hover classes.
         dropzone.on("dragover", function(){
-            interface.addClass('active');
+            dropzone.addClass('active');
             return false;
         });
 
         dropzone.on("dragleave", function(){
-            interface.removeClass('active');
+            dropzone.removeClass('active');
             return false;
         });
 
-        dropzone.on("drop", function(event){
-            event.preventDefault();
-            interface.removeClass('active');
-            upload(event.originalEvent.dataTransfer.files);
+        $('button').hover(function(){
+            dropzone.toggleClass('active');
         });
     });

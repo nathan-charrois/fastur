@@ -35,9 +35,8 @@ use Fastur\Helper\Input;
                     // Upload file.
                     $image = $imgur->upload()->file($_FILES['files']);
 
-                    var_dump($image);
-
-                    return true;
+                    // Return image data.
+                    echo json_encode($image);
                 }
             }
     }
