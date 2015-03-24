@@ -1,35 +1,20 @@
 <?php
 namespace Fastur\Helper;
 
-/**
- *  Input Class
- *
- *  @author nathancharrois@gmail.com
- */
+class Input{
 
-    class Input{
+    public static function exists($method = 'post') {
 
-        /**
-         *  Check if post data exists.
-         *
-         *  @param $method   string
-         */
-            public static function exists($method = 'post') {
-
-                switch ($method) {
-
-                    case 'post':
-                        return (!empty($_POST)) ? true : false;
-                        break;
-
-                    case 'file':
-                        return (!empty($_FILES)) ? true : false;
-                        break;
-
-                    default:
-                        return false;
-                        break;
-                }
-            }
-
+        switch ($method) {
+            case 'post':
+                return (!empty($_POST)) ? true : false;
+                break;
+            case 'file':
+                return (!empty($_FILES)) ? true : false;
+                break;
+            default:
+                return false;
+                break;
+        }
     }
+}

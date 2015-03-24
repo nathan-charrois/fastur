@@ -8,7 +8,7 @@ RewriteEngine On
 Options -Indexes
 
 # When using the script within a sub-folder, put this path here, like /mysubfolder/
-RewriteBase /2014/fastur/
+# RewriteBase /2015/fastur/
 
 # General rewrite rules
 RewriteCond %{REQUEST_FILENAME} !-d

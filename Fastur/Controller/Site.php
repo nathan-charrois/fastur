@@ -5,38 +5,22 @@ use Fastur\Lib\Controller;
 use Fastur\Helper\Imgur;
 use Fastur\Helper\Input;
 
-/**
- *  Site Controller
- *
- *  @author nathancharrois@gmail.com
- */
-    class Site extends Controller {
 
-        /**
-         *  Index page.
-         */
-            public function index() {
+class Site extends Controller {
 
-                // Render layout and view files.
-                $this->render('static/index', 'site/index');
-            }
-
-        /**
-         *  Upload.
-         */
-            public function upload() {
-
-                // If file has been posted.
-                if(Input::exists('file')) {
-
-                    // Connect to imgur.
-                    $imgur = new Imgur(API_KEY, API_SECRET);
-
-                    // Upload file.
-                    $image = $imgur->upload()->file($_FILES['files']);
-
-                    // Return image data.
-                    echo json_encode($image);
-                }
-            }
+    public function index() {
+        $this->render('Static/index', 'site/index');
     }
+
+    public function upload() {
+
+        if(Input::exists('file')) {
+
+            // Connect and upload to imgur.
+            $imgur = new Imgur(API_KEY, API_SECRET);
+            $image = $imgur->upload()->file($_FILES['files']);
+
+            echo json_encode($image);
+        }
+    }
+}

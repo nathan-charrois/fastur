@@ -15,5 +15,5 @@
     Skeleton MVC Pattern by panique
     https://github.com/panique/php-mvc/
 
-    Donny Dog
-    Steam ID: Donny Dog
+    Ali
+    @granolaondaroof

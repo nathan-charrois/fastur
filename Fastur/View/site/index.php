@@ -8,20 +8,7 @@
  *  data-mode="view"
  */
 ?>
-    <div class="container" data-event="dropzone" data-mode="select">
-        <div class="interface">
-            <div class="interface-content">
-                <h1 class="margin-bottom-large">
-                    Drag &amp; drop your image here <br />
-                    or manually select them below.
-                </h1>
-                <button class="button button-primary" data-event="select-file">
-                    Select Images
-                </button>
-                <input type="file" class="hide" />
-            </div>
-        </div>
-    </div>
+    <div class="container" data-event="dropzone" data-mode="select"></div>
 
     <div class="container hide" data-mode="upload">
         <div class="interface">
