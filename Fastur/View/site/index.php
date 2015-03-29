@@ -8,27 +8,4 @@
  *  data-mode="view"
  */
 ?>
-    <div class="container" data-event="dropzone" data-mode="select"></div>
-
-    <div class="container hide" data-mode="upload">
-        <div class="interface">
-            <div class="interface-content">
-                <div class="graphic-cloud">
-                    <i class="fa fa-cloud"></i>
-                    <i class="fa fa-refresh fa-spin"></i>
-                </div>
-                <h1 class="margin-top-medium">
-                    uploading 1 file...
-                </h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="container hide" data-mode="view">
-        <div class="image-view" data-clipboard-text="">
-            <div class="image-info">
-                <h1 data-update="file-link"></h1>
-                <span data-update="file-size"></span>
-            </div>
-        </div>
-    </div>
+    <div class="container"></div>

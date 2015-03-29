@@ -5,10 +5,34 @@
         this.config = config;
         this.view = view;
         this.index();
+        this.subscriptions();
+        this.uploader = new app.Component.Upload({
+            path: this.config.path + '/site/upload/',
+            dropzone: this.config.container,
+            selectFileBtn: '[data-event="select-file"]'
+        });
+    }
+
+    Controller.prototype.subscriptions = function() {
+        var self = this;
+
+        // Subscribe to Upload component events.
+        $(self.config.container)
+
+            .bind('upload/uploading', function() {
+                self.upload();
+            })
+
+            .bind('upload/success', function(e, data) {
+                self.displayImage(data);
+            })
+
+            .bind('upload/error', function() {
+                console.log('An error has occured.');
+            })
     }
 
     Controller.prototype.index = function() {
-        var uploader = new app.Component.Uploader(this.config);
         var view = this.view;
 
         view.set('index', {
@@ -18,9 +42,21 @@
             }
         });
 
-        $(window).on('click', function() {
-            view.set('wait', {});
-            view.render();
+        view.render();
+    }
+
+    Controller.prototype.upload = function(){
+        var view = this.view;
+
+        view.set('upload', {});
+        view.render();
+    }
+
+    Controller.prototype.displayImage = function(file) {
+        var view = this.view;
+        var data = file.data;
+        view.set('displayImage', {
+            data
         });
 
         view.render();

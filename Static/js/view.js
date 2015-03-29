@@ -12,10 +12,13 @@
         this.data = content.data;
         switch(view) {
             case 'index':
-                this.currentView = this.initialState;
+                this.currentView = this.index;
             break;
-            case 'wait':
-                this.currentView = this.uploading;
+            case 'upload':
+                this.currentView = this.upload;
+            break;
+            case 'displayImage':
+                this.currentView = this.displayImage;
             break;
         }
     }
@@ -24,12 +27,17 @@
         return this.currentView();
     }
 
-    View.prototype.initialState = function(data) {
-        this.$container.append(this.template.initialState(this.data));
+    View.prototype.index = function(data) {
+        this.$container.html(this.template.initialState(this.data));
     }
 
-    View.prototype.uploading = function() {
-        console.log('Uploading...');
+    View.prototype.upload = function() {
+        this.$container.html(this.template.uploading());
+    }
+
+    View.prototype.displayImage = function() {
+        this.$container.html(this.template.displayImage(this.data));
+        selectElementContents(test);
     }
 
     window.app = window.app || {};
